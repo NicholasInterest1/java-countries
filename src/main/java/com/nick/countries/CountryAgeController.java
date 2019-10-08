@@ -40,7 +40,7 @@ public class CountryAgeController {
 
     @GetMapping(value = "/median",
     produces = "application/json")
-    public ResponseEntity<?> getTheMedianAge() {
+    public ResponseEntity<?> getMedianMedianAge() {
         ArrayList<Country> rtnCountries = (ArrayList) CountriesApplication.ourCountryList.countryList;
         rtnCountries.sort((c1, c2) -> c2.getMedianAge() - c1.getMedianAge());
         int medianCountry = rtnCountries.size() /2;
