@@ -28,7 +28,7 @@ public class CountryNameController {
     }
 
     @GetMapping(value = "/size/{number}",
-    produces = "aplication/json")
+    produces = "application/json")
     public ResponseEntity<?> getCountriesByLengthOfName(@PathVariable int number) {
         ArrayList<Country> rtnCountries = CountriesApplication.ourCountryList.findCountries(c -> c.getName().length() >= number);
         rtnCountries.sort((c1, c2) -> c1.getName().compareToIgnoreCase(c2.getName()));
